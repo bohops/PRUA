@@ -13,7 +13,7 @@ Use Case(s)
 Requirements | Recommendations
 ==============================
 - Python 2.x.x
-- PRUA is designed to process CORESECURITY Impacket secretsdump.py hashdump output
+- PRUA is designed to process "standard" hashdump output such as that from secretsdump.py, Meterpreter, Cobalt Strike, etc.
 - Secretsdump Example: python secretsdump.py domain/administrator@localdc.domain.int -outputfile
 - Record Hash Format: [SAMACCOUNTNAME]:[RID]:[LM HASH]:[NTLM HASH]:::
 - Record Hash Example: acmeadmin:500:aad3b435b51404eeaad3b435b51404ee:7e442618b06285c490c28c5c49b092fe:::
