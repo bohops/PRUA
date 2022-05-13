@@ -19,8 +19,8 @@ def usage():
     echo+= "[*] Record Hash Example: acmeadmin:500:aad3b435b51404eeaad3b435b51404ee:7e442618b06285c490c28c5c49b092fe:::\n\n"
     echo+= "Usage\n"
     echo+= "-----\n"
-    echo+= "[*] python " + sys.argv[0] + " [hashdump 1] [hashdump 2] [hashdump n]\n\n"
-    print echo
+    echo+= "[*] python3 " + sys.argv[0] + " [hashdump 1] [hashdump 2] [hashdump n]\n\n"
+    print(echo)
 
 def import_hashfiles():
     try:
@@ -40,8 +40,8 @@ def import_hashfiles():
                 ntlm_set[data[3]] = []
             data_set[file] = file_data
         return ntlm_set, data_set
-    except Exception, e:
-        print "[-] " + str(e)
+    except(Exception, e):
+        print( "[-] " + str(e))
 
 def compare_hashes(ntlm_set, data_set):
     for key, data in data_set.items():
@@ -54,12 +54,12 @@ def output_results(ntlm_set):
     echo+= "=================\n"
     echo+= "[*] PRUA Results:\n"
     echo+= "================="
-    print echo
+    print(echo)
     for key, data in ntlm_set.items():
         if len(data) > 1:
-            print "\n[+] ------------------------------------------------------------------------------------\n"
+            print( "\n[+] ------------------------------------------------------------------------------------\n")
             for field in data:
-                print field[0] + ":" + field[1] + ":" + field[2] + ":" + field[3] + ":::  (" + field[7] + ")"
+                print(field[0] + ":" + field[1] + ":" + field[2] + ":" + field[3] + ":::  (" + field[7] + ")")
 
 def main():
     if len(sys.argv) > 1:
